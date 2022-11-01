@@ -5,17 +5,35 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <ul class="list-group">
 
+    <div class="col-md-8">
+      <!-- -----EmployedArray---- -->
+      <ul class="list-group mt-4">
+        <li *ngFor="let employed of employedArray" class="list-group-item list-group-item-action">
+
+         <span class="badge bg-primary">{{employed.id}}</span>
+          {{employed.name}} - {{employed.country}}
+
+        </li>
       </ul>
+
       <div class="card mt-4">
+
         <div class="card-body">
           <div class="card-title">
               Insert a new Employed
           </div>
         </div>
+
+        <div class="form-group">
+
+          <input type="text" [(ngModel)]="selectedEmployed.name" placeholder="Name" class="form-control">
+          
+        </div>
+
       </div>
+
+
     </div>
     <div class="col-md-4">
       <img
